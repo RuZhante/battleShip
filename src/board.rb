@@ -22,7 +22,3 @@ class Board
     end
   end
 end
-
-game_board = Board.new
-game_board.build_game_board
-p game_board
