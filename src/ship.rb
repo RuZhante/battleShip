@@ -1,10 +1,10 @@
 class Ship
 
-  attr_accessor :get_random_coordinates
-
   def self.build_ship(board, count_ship, count_palub)
     coordinates = get_random_coordinates
     puts coordinates
+
+    is_available_coordinates?(board, coordinates)
 
   end
 
@@ -16,7 +16,17 @@ class Ship
   end
 
   def self.is_available_coordinates?(board, coordinates)
-    result = board.find { |item|  item.include?(coordinates)}
+    result = nil
+    board.each do |hash_coordinates|
+      if hash_coordinates[:row] == coordinates[:row] &&
+         hash_coordinates[:column] == coordinates[:column] &&
+         hash_coordinates[:status] == 'X'
+        result = true
+      elsif
+        result = false
+      end
+    end
+    p result
   end
 
   private_class_method :get_random_coordinates ,:is_available_coordinates?
