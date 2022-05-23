@@ -14,7 +14,7 @@ class Board
       column = 1
 
         while column <= 10
-          self.board.push({row: "#{row}".to_i, column: "#{column}".to_i, status: 'X'})
+          self.board.push({row: "#{row}".to_i, column: "#{column}".to_i, status: '.'})
           column += 1
         end
 

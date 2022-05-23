@@ -1,7 +1,7 @@
 class Print
 
   def self.print_game_board(board)
-    puts '    A B C D E F G H I I'
+    puts '    A B C D E F G H I J'
     puts '   +-+-+-+-+-+-+-+-+-+-+'
 
     string_board = ''
