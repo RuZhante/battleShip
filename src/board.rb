@@ -1,10 +1,7 @@
+# frozen_string_literal: true
+
+# class Board
 class Board
-
-  STATUSES = {
-    empty: :empty,
-    busy: :busy
-  }
-
   def initialize
     self.board = []
   end
@@ -12,16 +9,15 @@ class Board
   attr_accessor :board
 
   def build_game_board
-
     row = 1
 
     while row <= 10
       column = 1
 
-        while column <= 10
-          self.board.push({row: "#{row}".to_i, column: "#{column}".to_i, status: STATUSES[:empty]})
-          column += 1
-        end
+      while column <= 10
+        board.push({ row: row, column: column, status: '.' })
+        column += 1
+      end
 
       row += 1
     end

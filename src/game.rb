@@ -1,6 +1,8 @@
-require_relative 'board.rb'
-require_relative 'print.rb'
-require_relative 'ship.rb'
+# frozen_string_literal: true
+
+require_relative 'board'
+require_relative 'print'
+require_relative 'ship'
 
 # create the game_board
 game_board = Board.new

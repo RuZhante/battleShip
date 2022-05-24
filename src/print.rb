@@ -1,32 +1,27 @@
-require_relative './board.rb'
+# frozen_string_literal: true
 
+# class Print
 class Print
+  def self.get_string_board(board)
+    string_board = ''
+    board.each do |item|
+      string_board += case item[:column]
+                      when 10
+                        " #{item[:status]}\n"
+                      when 1
+                        "#{item[:row].to_s.rjust(2)}| #{item[:status]}"
+                      else
+                        " #{item[:status]}"
+                      end
+    end
+    puts string_board
+  end
 
   def self.print_game_board(board)
     puts '    A B C D E F G H I J'
     puts '   +-+-+-+-+-+-+-+-+-+-+'
-
-    string_board = ''
-
-    board.each do |item|
-
-      status = case item[:status]
-      when Board::STATUSES[:empty], Board::STATUSES[:busy]
-        "."
-      end
-
-      if item[:column] == 10
-        string_board += " #{status}\n"
-      elsif
-        if item[:column] == 1
-          string_board += "#{item[:row].to_s.rjust(2)}| #{status}"
-        elsif
-          string_board += " #{status}"
-        end
-      end
-
-    end
-
-    puts string_board
+    get_string_board(board)
   end
+
+  private_class_method :get_string_board
 end
