@@ -1,5 +1,10 @@
 class Board
 
+  STATUSES = {
+    empty: :empty,
+    busy: :busy
+  }
+
   def initialize
     self.board = []
   end
@@ -14,7 +19,7 @@ class Board
       column = 1
 
         while column <= 10
-          self.board.push({row: "#{row}".to_i, column: "#{column}".to_i, status: '.'})
+          self.board.push({row: "#{row}".to_i, column: "#{column}".to_i, status: STATUSES[:empty]})
           column += 1
         end
 

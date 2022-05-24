@@ -14,8 +14,7 @@ class Ship
   end
 
   def self.get_random_coordinates(board)
-    coordinates = board.sample
-    return coordinates
+    board.sample
   end
 
   def self.is_available_coordinates?(board, coordinates)
