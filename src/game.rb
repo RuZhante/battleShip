@@ -13,3 +13,5 @@ Print.print_game_board(game_board.board)
 
 # create ships
 Ship.build_ship(game_board.board, 1, 4)
+
+Print.print_game_board(game_board.board)
