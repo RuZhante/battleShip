@@ -2,19 +2,21 @@
 
 # class Ship
 class Ship
-  def self.build_ship(board, _count_ship, _count_palub)
+  def self.build_ship(board, count_ship, count_palub)
     available_coordinates_board = Marshal.load(Marshal.dump(board))
-    coordinates = get_random_coordinates(available_coordinates_board)
+    count_ship.times do
+      count_palub.times do
+        coordinates = get_random_coordinates(available_coordinates_board)
+        set_palub(coordinates, board)
+      end
+    end
 
-    p coordinates
-
-    set_palub(coordinates, board)
     puts('--->', board.size)
     puts('--->', available_coordinates_board.size)
   end
 
   def self.get_random_coordinates(available_coordinates_board)
-    random_index = rand(0..99)
+    random_index = rand(0..(available_coordinates_board.size - 1))
     available_coordinates_board.delete_at(random_index)
   end
 
