@@ -46,7 +46,7 @@ class Ship
                                      status: '.' }]
   end
 
-  def self.set_palub(_coordinates, board, _count_palub, _build_coordinates)
+  def self.set_palub(_coordinates, board, _build_coordinates)
     board.map do |i|
       puts i # todo
     end
